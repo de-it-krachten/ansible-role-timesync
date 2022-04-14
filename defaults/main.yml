@@ -1,0 +1,25 @@
+---
+
+# packages that need to be present
+timesync_packages:
+  - systemd-timesyncd
+
+# Time zone (eg 'Europe/Amsterdam')
+timesync_timezone: ""
+
+# Ensure hwclock is set to UTC or local time
+# options : local, UTC
+timesync_hwclock: null
+
+# List of primary NTP servers
+timesync_ntp_servers: []
+
+# List of fallback NTP servers
+timesync_fallback_ntp_servers:
+  - 0.pool.ntp.org
+  - 1.pool.ntp.org
+  - 2.pool.ntp.org
+  - 3.pool.ntp.org
+
+# Additional options (as key/value pairs)
+timesync_options: {}
