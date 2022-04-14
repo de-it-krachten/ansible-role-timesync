@@ -1,0 +1,42 @@
+---
+
+# Generic
+generic:
+  role: ansible-role-timesync
+  role_short: timesync
+  role_description: |
+    Configure time synchronization based upon timesync
+
+molecule:
+  converge:
+    vars:
+      timesync_timezone: 'UTC'
+      timesync_ntp_servers:
+        - 0.nl.pool.ntp.org
+        - 1.nl.pool.ntp.org
+        - 2.nl.pool.ntp.org
+        - 3.nl.pool.ntp.org
+  platforms:
+    - rockylinux8
+    - debian10
+    - debian11
+    - ubuntu1804
+    - ubuntu2004
+
+# Supported platforms
+platforms:
+  - name: Red Hat Enterprise Linux 8
+    ci: false
+  - name: RockyLinux 8
+    image: rockylinux8
+  - name: AlmaLinux 8
+    image: almalinux8
+    ci: false
+  - name: Debian 10 (Buster)
+    image: debian10
+  - name: Debian 11 (Bullseye)
+    image: debian11
+  - name: Ubuntu 18.04 LTS
+    image: ubuntu1804
+  - name: Ubuntu 20.04 LTS
+    image: ubuntu2004

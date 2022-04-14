@@ -1,0 +1,55 @@
+---
+
+- name: Load variables based on OS type
+  include_vars: "{{ lookup('first_found', params) }}"
+  vars:
+    params:
+      files:
+        - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+        - "{{ ansible_distribution }}.yml"
+        - "family-{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"
+        - "family-{{ ansible_os_family }}.yml"
+        - default.yml
+      paths:
+        - 'vars'
+
+- name: Make sure all required variables are given
+  assert:
+    that:
+      - timesync_timezone is defined and timesync_timezone|length > 0
+      - timesync_ntp_servers is defined and timesync_fallback_ntp_servers|length > 0
+
+- name: Install packages
+  package:
+    name: "{{ timesync_packages }}"
+    state: present
+  when: timesync_packages|length > 0
+
+- name: Set hwclock to local or RTC
+  timezone:
+    hwclock: "{{ timesync_hwclock }}"
+  when: timesync_hwclock is defined and timesync_hwclock != None
+  notify: Restart timesyncd
+  tags: molecule-notest
+
+- name: Set timezone
+  timezone:
+    name: "{{ timesync_timezone }}"
+  notify: Restart timesyncd
+  tags: molecule-notest
+
+- name: Configure timesyncd
+  template:
+    src: timesyncd.conf.j2
+    dest: /etc/systemd/timesyncd.conf
+    mode: 0644
+    owner: root
+    group: root
+  notify: Restart timesyncd
+
+- name: Start and enable systemd-timesyncd
+  service:
+    name: systemd-timesyncd
+    enabled: yes
+    state: started
+  tags: molecule-idempotence-notest

@@ -1,0 +1,8 @@
+# {{ ansible_managed }}
+
+[Time]
+NTP={{ timesync_ntp_servers | join(" ") }}
+FallbackNTP={{ timesync_fallback_ntp_servers | join(" ") }}
+{% for key, value in timesync_options.items() %}
+{{ key }}={{ value }}
+{% endfor %}
