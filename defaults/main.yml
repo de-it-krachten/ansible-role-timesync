@@ -5,6 +5,7 @@ timesync_packages:
   - systemd-timesyncd
 
 # Time zone (eg 'Europe/Amsterdam')
+# Use value 'unchanged' to leave it unchanged
 timesync_timezone: ""
 
 # Ensure hwclock is set to UTC or local time

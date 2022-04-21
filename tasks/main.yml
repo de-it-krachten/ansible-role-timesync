@@ -36,6 +36,10 @@
   timezone:
     name: "{{ timesync_timezone }}"
   notify: Restart timesyncd
+  when:
+    - timesync_timezone is defined and timesync_timezone|length > 0
+    - timesync_timezone != 'unchanged'
+
   tags: molecule-notest
 
 - name: Configure timesyncd
