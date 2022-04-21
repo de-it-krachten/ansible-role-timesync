@@ -19,6 +19,27 @@
       - timesync_timezone is defined and timesync_timezone|length > 0
       - timesync_ntp_servers is defined and timesync_fallback_ntp_servers|length > 0
 
+- name: Get all service facts
+  service_facts:
+
+- name: Create a list of all known services
+  set_fact:
+    _services: "{{ ansible_facts | json_query('services.*.name') }}"
+
+- name: Disable obsolete services
+  service:
+    name: "{{ item }}"
+    state: stopped
+    enabled: false
+  failed_when: false
+  when: _services is search(item)
+  loop: "{{ timesync_services_obsolete }}"
+
+- name: Uninstall packages (like chrony/ntp)
+  package:
+    name: "{{ timesync_packages_obsolete }}"
+    state: absent
+
 - name: Install packages
   package:
     name: "{{ timesync_packages }}"
