@@ -4,7 +4,23 @@
 timesync_packages:
   - systemd-timesyncd
 
+# should obsolete packages be uninstalled
+timesync_packages_uninstall: false
+
+# Packages that can be removed
+timesync_packages_obsolete:
+  - chrony
+  - ntp
+
+# Obsolete services
+timesync_services_obsolete:
+  - chrony
+  - chronyd
+  - ntp
+  - ntpd
+
 # Time zone (eg 'Europe/Amsterdam')
+# Use value 'unchanged' to leave it unchanged
 timesync_timezone: ""
 
 # Ensure hwclock is set to UTC or local time
