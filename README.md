@@ -6,28 +6,50 @@
 Configure time synchronization based upon timesync
 
 
-Platforms
---------------
+## Platforms
 
 Supported platforms
 
+- Red Hat Enterprise Linux 7<sup>1</sup>
 - Red Hat Enterprise Linux 8<sup>1</sup>
+- Red Hat Enterprise Linux 9<sup>1</sup>
+- CentOS 7
 - RockyLinux 8
-- AlmaLinux 8<sup>1</sup>
+- OracleLinux 8
+- AlmaLinux 8
+- AlmaLinux 9
 - Debian 10 (Buster)
 - Debian 11 (Bullseye)
 - Ubuntu 18.04 LTS
 - Ubuntu 20.04 LTS
+- Ubuntu 22.04 LTS
+- Fedora 35
+- Fedora 36
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
 
-Role Variables
---------------
+## Role Variables
+### defaults/main.yml
 <pre><code>
 # packages that need to be present
 timesync_packages:
   - systemd-timesyncd
+
+# should obsolete packages be uninstalled
+timesync_packages_uninstall: false
+
+# Packages that can be removed
+timesync_packages_obsolete:
+  - chrony
+  - ntp
+
+# Obsolete services
+timesync_services_obsolete:
+  - chrony
+  - chronyd
+  - ntp
+  - ntpd
 
 # Time zone (eg 'Europe/Amsterdam')
 # Use value 'unchanged' to leave it unchanged
@@ -51,10 +73,38 @@ timesync_fallback_ntp_servers:
 timesync_options: {}
 </pre></code>
 
+### vars/Ubuntu-18.yml
+<pre><code>
+# packages that should be installed
+timesync_packages: []
+</pre></code>
 
-Example Playbook
-----------------
+### vars/family-RedHat.yml
+<pre><code>
 
+</pre></code>
+
+### vars/Debian-10.yml
+<pre><code>
+# packages that should be installed
+timesync_packages: []
+</pre></code>
+
+### vars/family-Debian.yml
+<pre><code>
+
+</pre></code>
+
+### vars/family-RedHat-7.yml
+<pre><code>
+# packages that should be installed
+timesync_packages: []
+</pre></code>
+
+
+
+## Example Playbook
+### molecule/default/converge.yml
 <pre><code>
 - name: sample playbook for role 'timesync'
   hosts: all
