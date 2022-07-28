@@ -13,6 +13,7 @@ Supported platforms
 - Red Hat Enterprise Linux 8<sup>1</sup>
 - Red Hat Enterprise Linux 9<sup>1</sup>
 - RockyLinux 8
+- RockyLinux 9
 - OracleLinux 8
 - AlmaLinux 8
 - AlmaLinux 9
@@ -80,7 +81,8 @@ timesync_packages: []
 ### vars/Fedora.yml
 <pre><code>
 # packages that need to be present
-timesync_packages: []
+timesync_packages:
+  - systemd-udev
 </pre></code>
 
 ### vars/family-RedHat.yml
@@ -112,6 +114,7 @@ timesync_packages: []
 <pre><code>
 - name: sample playbook for role 'timesync'
   hosts: all
+  become: "{{ molecule['converge']['become'] | default('yes') }}"
   vars:
     timesync_timezone: UTC
     timesync_ntp_servers: ['0.nl.pool.ntp.org', '1.nl.pool.ntp.org', '2.nl.pool.ntp.org', '3.nl.pool.ntp.org']
