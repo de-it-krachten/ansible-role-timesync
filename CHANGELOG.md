@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.1.0...v1.2.0) (2022-07-28)
+
+
+### Features
+
+* Implement ansible-lint v6 support ([1679999](https://github.com/de-it-krachten/ansible-role-timesync/commit/167999992d22d62cda626820077edbf7885898a7))
+
 # [1.1.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.0.0...v1.1.0) (2022-04-22)
 
 
