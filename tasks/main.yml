@@ -1,7 +1,7 @@
 ---
 
 - name: Load variables based on OS type
-  include_vars: "{{ lookup('first_found', params) }}"
+  ansible.builtin.include_vars: "{{ lookup('first_found', params) }}"
   vars:
     params:
       files:
@@ -14,20 +14,20 @@
         - 'vars'
 
 - name: Make sure all required variables are given
-  assert:
+  ansible.builtin.assert:
     that:
       - timesync_timezone is defined and timesync_timezone|length > 0
       - timesync_ntp_servers is defined and timesync_fallback_ntp_servers|length > 0
 
 - name: Get all service facts
-  service_facts:
+  ansible.builtin.service_facts:
 
 - name: Create a list of all known services
-  set_fact:
+  ansible.builtin.set_fact:
     _services: "{{ ansible_facts | json_query('services.*.name') }}"
 
 - name: Disable obsolete services
-  service:
+  ansible.builtin.service:
     name: "{{ item }}"
     state: stopped
     enabled: false
@@ -36,25 +36,25 @@
   loop: "{{ timesync_services_obsolete }}"
 
 - name: Uninstall packages (like chrony/ntp)
-  package:
+  ansible.builtin.package:
     name: "{{ timesync_packages_obsolete }}"
     state: absent
 
 - name: Install packages
-  package:
+  ansible.builtin.package:
     name: "{{ timesync_packages }}"
     state: present
   when: timesync_packages|length > 0
 
 - name: Set hwclock to local or RTC
-  timezone:
+  community.general.timezone:
     hwclock: "{{ timesync_hwclock }}"
   when: timesync_hwclock is defined and timesync_hwclock != None
   notify: Restart timesyncd
   tags: molecule-notest
 
 - name: Set timezone
-  timezone:
+  community.general.timezone:
     name: "{{ timesync_timezone }}"
   notify: Restart timesyncd
   when:
@@ -63,7 +63,7 @@
   tags: molecule-notest
 
 - name: Configure timesyncd
-  template:
+  ansible.builtin.template:
     src: timesyncd.conf.j2
     dest: /etc/systemd/timesyncd.conf
     mode: 0644
@@ -72,7 +72,7 @@
   notify: Restart timesyncd
 
 - name: Start and enable systemd-timesyncd
-  service:
+  ansible.builtin.service:
     name: systemd-timesyncd
     enabled: yes
     state: started

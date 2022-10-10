@@ -6,6 +6,16 @@
 Configure time synchronization based upon timesync
 
 
+
+## Dependencies
+
+#### Roles
+None
+
+#### Collections
+- community.general
+- community.general
+
 ## Platforms
 
 Supported platforms
@@ -72,6 +82,7 @@ timesync_fallback_ntp_servers:
 timesync_options: {}
 </pre></code>
 
+
 ### vars/Ubuntu-18.yml
 <pre><code>
 # packages that should be installed
@@ -120,6 +131,6 @@ timesync_packages: []
     timesync_ntp_servers: ['0.nl.pool.ntp.org', '1.nl.pool.ntp.org', '2.nl.pool.ntp.org', '3.nl.pool.ntp.org']
   tasks:
     - name: Include role 'timesync'
-      include_role:
+      ansible.builtin.include_role:
         name: timesync
 </pre></code>
