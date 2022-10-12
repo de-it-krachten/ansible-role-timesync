@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.2.0...v1.3.0) (2022-10-12)
+
+
+### Features
+
+* Move to FQCN ([73590e0](https://github.com/de-it-krachten/ansible-role-timesync/commit/73590e00a84b962308c76dafef34592584344b27))
+* Update CI to latest standards ([0f2514f](https://github.com/de-it-krachten/ansible-role-timesync/commit/0f2514f7c45cb09f2d663932f32a0325b4cb6267))
+
 # [1.2.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.1.0...v1.2.0) (2022-07-28)
 
 
