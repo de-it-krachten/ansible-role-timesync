@@ -14,7 +14,6 @@ None
 
 #### Collections
 - community.general
-- community.general
 
 ## Platforms
 
@@ -25,6 +24,7 @@ Supported platforms
 - RockyLinux 8
 - RockyLinux 9
 - OracleLinux 8
+- OracleLinux 9
 - AlmaLinux 8
 - AlmaLinux 9
 - Debian 10 (Buster)
@@ -32,8 +32,8 @@ Supported platforms
 - Ubuntu 18.04 LTS
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
-- Fedora 35
 - Fedora 36
+- Fedora 37
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
@@ -125,7 +125,7 @@ timesync_packages: []
 <pre><code>
 - name: sample playbook for role 'timesync'
   hosts: all
-  become: "{{ molecule['converge']['become'] | default('yes') }}"
+  become: "yes"
   vars:
     timesync_timezone: UTC
     timesync_ntp_servers: ['0.nl.pool.ntp.org', '1.nl.pool.ntp.org', '2.nl.pool.ntp.org', '3.nl.pool.ntp.org']
