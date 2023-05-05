@@ -83,20 +83,7 @@ timesync_options: {}
 </pre></code>
 
 
-### vars/Ubuntu-18.yml
-<pre><code>
-# packages that should be installed
-timesync_packages: []
-</pre></code>
-
-### vars/Fedora.yml
-<pre><code>
-# packages that need to be present
-timesync_packages:
-  - systemd-udev
-</pre></code>
-
-### vars/family-RedHat.yml
+### vars/family-Debian.yml
 <pre><code>
 
 </pre></code>
@@ -107,7 +94,13 @@ timesync_packages:
 timesync_packages: []
 </pre></code>
 
-### vars/family-Debian.yml
+### vars/Ubuntu-18.yml
+<pre><code>
+# packages that should be installed
+timesync_packages: []
+</pre></code>
+
+### vars/family-RedHat.yml
 <pre><code>
 
 </pre></code>
@@ -116,6 +109,13 @@ timesync_packages: []
 <pre><code>
 # packages that should be installed
 timesync_packages: []
+</pre></code>
+
+### vars/Fedora.yml
+<pre><code>
+# packages that need to be present
+timesync_packages:
+  - systemd-udev
 </pre></code>
 
 
