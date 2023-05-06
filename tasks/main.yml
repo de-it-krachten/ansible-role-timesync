@@ -46,7 +46,7 @@
     state: present
   when: timesync_packages|length > 0
 
-- name: Set hwclock to local or RTC
+- name: Set hwclock to local or RTC  # noqa args[module]
   community.general.timezone:
     hwclock: "{{ timesync_hwclock }}"
   when: timesync_hwclock is defined and timesync_hwclock != None
