@@ -27,13 +27,15 @@ Supported platforms
 - OracleLinux 9
 - AlmaLinux 8
 - AlmaLinux 9
-- Debian 10 (Buster)
+- SUSE Linux Enterprise 15<sup>1</sup>
+- openSUSE Leap 15
+- Debian 10 (Buster)<sup>1</sup>
 - Debian 11 (Bullseye)
-- Ubuntu 18.04 LTS
+- Debian 12 (Bookworm)
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
-- Fedora 36
 - Fedora 37
+- Fedora 38
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
@@ -82,41 +84,47 @@ timesync_fallback_ntp_servers:
 timesync_options: {}
 </pre></code>
 
-
-### vars/family-Debian.yml
+### defaults/family-Debian.yml
 <pre><code>
 
 </pre></code>
 
-### vars/Debian-10.yml
-<pre><code>
-# packages that should be installed
-timesync_packages: []
-</pre></code>
-
-### vars/Ubuntu-18.yml
+### defaults/Debian-10.yml
 <pre><code>
 # packages that should be installed
 timesync_packages: []
 </pre></code>
 
-### vars/family-RedHat.yml
-<pre><code>
-
-</pre></code>
-
-### vars/family-RedHat-7.yml
+### defaults/Ubuntu-18.yml
 <pre><code>
 # packages that should be installed
 timesync_packages: []
 </pre></code>
 
-### vars/Fedora.yml
+### defaults/family-Suse.yml
+<pre><code>
+# For SLES/OpenSUSE, it is part of ssytemd
+timesync_packages: []
+</pre></code>
+
+### defaults/family-RedHat.yml
+<pre><code>
+
+</pre></code>
+
+### defaults/family-RedHat-7.yml
+<pre><code>
+# packages that should be installed
+timesync_packages: []
+</pre></code>
+
+### defaults/Fedora.yml
 <pre><code>
 # packages that need to be present
 timesync_packages:
   - systemd-udev
 </pre></code>
+
 
 
 
