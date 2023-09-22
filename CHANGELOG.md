@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.4.0...v1.4.1) (2023-09-22)
+
+
+### Bug Fixes
+
+* Fix loop label to string ([d04765c](https://github.com/de-it-krachten/ansible-role-timesync/commit/d04765ccdd6c03d02f9c3fbb8cc2b8baa1749634))
+
 # [1.4.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.3.0...v1.4.0) (2023-08-16)
 
 
