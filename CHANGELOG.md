@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.4.1...v1.5.0) (2024-06-03)
+
+
+### Features
+
+* Add support for Ubuntu 24.04 LTS + Fedora 40 ([282ac05](https://github.com/de-it-krachten/ansible-role-timesync/commit/282ac05a2bda1c1bea83293cd30faa7d28aff1c9))
+
 ## [1.4.1](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.4.0...v1.4.1) (2023-09-22)
 
 
