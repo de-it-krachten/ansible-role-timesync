@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.5.0...v1.6.0) (2024-12-29)
+
+
+### Features
+
+* Update supported platforms & CI ([adb8ee9](https://github.com/de-it-krachten/ansible-role-timesync/commit/adb8ee96ab3189040a3febba9038bb363af7c6e4))
+
 # [1.5.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.4.1...v1.5.0) (2024-06-03)
 
 
