@@ -1,3 +1,14 @@
+# [1.7.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.6.0...v1.7.0) (2025-09-03)
+
+
+### Features
+
+* Add support for AlmaLinux 10 ([5e26027](https://github.com/de-it-krachten/ansible-role-timesync/commit/5e260271a618d6cbdf224b78a73498af1e874436))
+* Add support for Debian 13 (Trixie) ([ea9da47](https://github.com/de-it-krachten/ansible-role-timesync/commit/ea9da4783b9bd9f004fc7a28b75fd03d1308c33b))
+* Add support for OracleLinux 10 ([6d30533](https://github.com/de-it-krachten/ansible-role-timesync/commit/6d305332e8d70ce6ae3bc4a5526835b3a51d8cb1))
+* Add support for Red Hat Enterprise Linux 10 ([6a020d3](https://github.com/de-it-krachten/ansible-role-timesync/commit/6a020d3c36d514b8b566aab7101eb934191a6570))
+* Add support for RockyLinux 10 ([d41af29](https://github.com/de-it-krachten/ansible-role-timesync/commit/d41af297f45fa7e636efc4766377068d64823b1e))
+
 # [1.6.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.5.0...v1.6.0) (2024-12-29)
 
 
