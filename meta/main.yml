@@ -13,7 +13,6 @@ galaxy_info:
       versions:
         - '8'
         - '9'
-        - '10'
     - name: Debian
       versions:
         - bullseye
@@ -21,7 +20,6 @@ galaxy_info:
         - trixie
     - name: Ubuntu
       versions:
-        - focal
         - jammy
     - name: Fedora
       versions:

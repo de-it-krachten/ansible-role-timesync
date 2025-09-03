@@ -7,6 +7,28 @@ generic:
   role_description: |
     Configure time synchronization based upon timesync
 
+# Platforms
+platforms:
+  rhel10:
+    ci: false
+    supported: false
+  oraclelinux10:
+    ci: false
+    supported: false
+  rockylinux10:
+    ci: false
+    supported: false
+  almalinux10:
+    ci: false
+    supported: false
+  sles15:
+    ci: false
+    supported: false
+  opensuse15:
+    ci: false
+    supported: false
+
+# Molecule
 molecule:
   converge:
     vars:
@@ -16,17 +38,3 @@ molecule:
         - 1.nl.pool.ntp.org
         - 2.nl.pool.ntp.org
         - 3.nl.pool.ntp.org
-
-platforms:
-  rhel7:
-    ci: false
-    supported: false
-  centos7:
-    ci: false
-    supported: false
-  sles15:
-    ci: false
-    supported: false
-  opensuse15:
-    ci: false
-    supported: false
