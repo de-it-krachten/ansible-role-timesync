@@ -7,27 +7,22 @@ generic:
   role_description: |
     Configure time synchronization based upon timesync
 
-# Platforms
+# Supported platforms
 platforms:
   rhel10:
-    ci: false
     supported: false
-  oraclelinux10:
     ci: false
-    supported: false
   rockylinux10:
-    ci: false
     supported: false
+    ci: false
+  oraclelinux10:
+    supported: false
+    ci: false
   almalinux10:
-    ci: false
     supported: false
-  sles15:
     ci: false
-    supported: false
-  opensuse15:
-    ci: false
-    supported: false
 
+# Platforms
 # Molecule
 molecule:
   converge:
