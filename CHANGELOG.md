@@ -1,3 +1,11 @@
+# [1.8.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.7.0...v1.8.0) (2026-03-15)
+
+
+### Features
+
+* Added support for Fedora 43 ([9bdcf01](https://github.com/de-it-krachten/ansible-role-timesync/commit/9bdcf01dcc4a7448f48a757e9df136a835edb09c))
+* Drop support for Fedora 41 ([b353b0e](https://github.com/de-it-krachten/ansible-role-timesync/commit/b353b0e272a4bfa350c61b0935b5b8ae383ff3d3))
+
 # [1.7.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.6.0...v1.7.0) (2025-09-03)
 
 
