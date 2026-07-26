@@ -1,3 +1,17 @@
+# [1.9.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.8.0...v1.9.0) (2026-07-26)
+
+
+### Bug Fixes
+
+* Standarize vars.yml ([0bd9d99](https://github.com/de-it-krachten/ansible-role-timesync/commit/0bd9d990cef0956078c878eee344a6f928cc11ee))
+
+
+### Features
+
+* Added support for Fedora 44 ([e8d6cc2](https://github.com/de-it-krachten/ansible-role-timesync/commit/e8d6cc2e6c74282d2115cb9aa58edf73182b0dfd))
+* Added support for Ubuntu 26.04 LTS ([5ec71f4](https://github.com/de-it-krachten/ansible-role-timesync/commit/5ec71f4c9e20b5c5bc26525408ad25fc1e2212ce))
+* Drop support for Fedora 42 ([0a1bb09](https://github.com/de-it-krachten/ansible-role-timesync/commit/0a1bb092cc361d4d17f5c5df5e0d5bcbab29303e))
+
 # [1.8.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.7.0...v1.8.0) (2026-03-15)
 
 
