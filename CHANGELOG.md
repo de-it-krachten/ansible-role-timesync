@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.9.0...v1.10.0) (2026-10-30)
+
+
+### Features
+
+* Drop support for Debian 11 (Bullseye) ([9c6be22](https://github.com/de-it-krachten/ansible-role-timesync/commit/9c6be22f07ea1b207007c38b20b8a409b1a4ebad))
+
 # [1.9.0](https://github.com/de-it-krachten/ansible-role-timesync/compare/v1.8.0...v1.9.0) (2026-07-26)
 
 
